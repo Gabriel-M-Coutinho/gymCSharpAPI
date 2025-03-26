@@ -1,3 +1,5 @@
+using gymNet8.db;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 namespace gymNet8;
@@ -10,6 +12,9 @@ public class Program
 
         // Adicione os controladores
         builder.Services.AddControllers();
+
+        builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         // Configuração do Swagger com versão especificada
         builder.Services.AddEndpointsApiExplorer();
