@@ -30,3 +30,4 @@ E:\CProjects\gymNet8\gymNet8\obj\Debug\net8.0\refint\gymNet8.dll
 E:\CProjects\gymNet8\gymNet8\obj\Debug\net8.0\gymNet8.pdb
 E:\CProjects\gymNet8\gymNet8\obj\Debug\net8.0\gymNet8.genruntimeconfig.cache
 E:\CProjects\gymNet8\gymNet8\obj\Debug\net8.0\ref\gymNet8.dll
+E:\CProjects\gymNet8\gymNet8\obj\Debug\net8.0\gymNet8.sourcelink.json
