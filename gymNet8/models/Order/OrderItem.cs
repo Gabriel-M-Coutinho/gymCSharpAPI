@@ -5,19 +5,19 @@ namespace gymNet8.models;
 
 public class OrderItem
 {
-    [Key] public int Id { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public long Id { get; set; }
 
-    [ForeignKey("Order")] public int OrderId { get; set; }
+    [ForeignKey("Client")] public long OrderId { get; set; } // Tipo igual ao Order.Id
 
-    public Order Order { get; set; }
-
-    [ForeignKey("Product")] public int ProductId { get; set; }
-
-    public Product Product { get; set; }
+    [ForeignKey("Product")] public long ProductId { get; set; } // Tipo igual ao Product.Id
 
     public int Quantity { get; set; }
 
     [Column(TypeName = "decimal(18,2)")] public decimal UnitPrice { get; set; }
 
-    [Column(TypeName = "decimal(18,2)")] public decimal TotalPrice { get; set; }
+    // Navegação
+    public Order Order { get; set; }
+    public Product Product { get; set; }
 }

@@ -5,13 +5,14 @@ namespace gymNet8.models;
 
 public class Order
 {
-    [Key] public int Id { get; set; }
+    [Key] public long Id { get; set; }
 
-    // Chave estrangeira para o Cliente
-    [ForeignKey("Customer")] public long CustomerId { get; set; }
+    // Alterar de Customer para Client:
+    [ForeignKey("Client")] public long ClientId { get; set; } // Note que o tipo deve ser igual ao Id do Client (long)
 
-    // Navegação para o Cliente
-    public Client Customer { get; set; }
+    // Alterar de Customer para Client:
+    public Client Client { get; set; }
+
 
     public List<OrderItem> OrderItems { get; set; } = new();
 

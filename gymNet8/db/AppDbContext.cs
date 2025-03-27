@@ -19,6 +19,7 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        // Configurações de índice
         modelBuilder.Entity<Product>()
             .HasIndex(p => p.Name);
 
@@ -26,11 +27,14 @@ public class AppDbContext : DbContext
             .HasIndex(c => c.Email)
             .IsUnique();
 
+        // RELACIONAMENTO CORRIGIDO: Order -> Client
         modelBuilder.Entity<Order>()
-            .HasOne(o => o.Customer)
-            .WithMany(c => c.Orders)
-            .HasForeignKey(o => o.CustomerId);
+            .HasOne(o => o.Client) // Propriedade de navegação (Client)
+            .WithMany(c => c.Orders) // Coleção em Client
+            .HasForeignKey(o => o.ClientId) // FK correta (ClientId)
+            .OnDelete(DeleteBehavior.Restrict); // Opcional: define comportamento de deleção
 
+        // Relacionamentos de OrderItem
         modelBuilder.Entity<OrderItem>()
             .HasOne(oi => oi.Order)
             .WithMany(o => o.OrderItems)
