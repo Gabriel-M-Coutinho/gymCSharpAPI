@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("gymNet8")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5014a6a64447ccd798907bb9165dc6e11445ca97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3809d5e3d015cb2c0f255e8aa20484f59aa6c55")]
 [assembly: System.Reflection.AssemblyProductAttribute("gymNet8")]
 [assembly: System.Reflection.AssemblyTitleAttribute("gymNet8")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
